@@ -6,9 +6,9 @@
 //Your Firebase Project URL goes here without "http:" , "\" and "/"
 #define FIREBASE_AUTH "RNZLaAyQqslv3gUpCBtYJcayk6FzObHfSipY2D6k" 
 //Your Firebase Database Secret goes here
-#define WIFI_SSID "AndroidAP"                                              
+#define WIFI_SSID "ched_wifi"                                              
 //WiFi SSID to which you want NodeMCU to connect
-#define WIFI_PASSWORD "ched12345"                                      
+#define WIFI_PASSWORD "YnKak4qw"                                      
 //Password of your wifi network 
 // Declare the Firebase Data object in the global scope
 FirebaseData firebaseData;
@@ -75,7 +75,7 @@ void setup() {
 
   // Once ESPNow is successfully Init, we will register for Send CB to
   // get the status of Trasnmitted packet
-  esp_now_set_self_role(ESP_NOW_ROLE_CONTROLLER);
+  esp_now_set_self_role(ESP_NOW_ROLE_COMBO);
   esp_now_register_send_cb(OnDataSent);
   
   // Register peer
@@ -101,7 +101,7 @@ void loop() {
 
   Serial.print("Sample OK: ");
   Serial.print((int)SENDER1.temperature); Serial.print(" *C, ");
-  Serial.print((int)SENDER1.humidity); Serial.println(" RH%");
+  Serial.print((int)SENDER1.humidity); Serial.println(" %");
   Serial.print((int)SENDER1.lightVal); Serial.println(" ");
 
 
